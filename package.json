@@ -1,0 +1,16 @@
+{
+  "name": "structor-templates",
+  "version": "1.0.0",
+  "description": "Material-UI template for structor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "structor",
+    "material-ui",
+    "templates"
+  ],
+  "author": "Fi1osof",
+  "license": "Apache-2.0"
+}
