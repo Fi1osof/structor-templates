@@ -1,5 +1,4 @@
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
+
 import App from './components/App';
 import MainLayout from './components/MainLayout';
 import Informer from './components/Informer';

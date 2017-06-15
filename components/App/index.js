@@ -7,6 +7,9 @@
 import React, { Component } from "react";
 import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router'
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 import PropTypes from "prop-types";
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
