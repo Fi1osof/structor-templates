@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Snackbar from 'modules/Templates/components/Snackbar';
+import Snackbar from '../Snackbar';
 
 export default class Informer extends Snackbar {
 
