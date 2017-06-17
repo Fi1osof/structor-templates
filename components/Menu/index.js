@@ -32,17 +32,10 @@ class Menu extends Component {
 
     console.log('router', this.context.router);
 
-    return (
-      <div>
-        <ul>
-          <li><Link to='/home'>Home</Link></li>
-          <li><Link to='/templates/auth'>Template/Auth</Link></li>
-        </ul>
-        {/* добавили вывод потомков */}
-        {this.props.children}
-
-      </div>
-    );
+    return <ul>
+      <li><Link to='/home'>Home</Link></li>
+      <li><Link to='/templates/auth'>Template/Auth</Link></li>
+    </ul>;
   }
 }
 

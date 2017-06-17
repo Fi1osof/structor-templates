@@ -18,8 +18,6 @@ const defaultProps = {
 
 class Auth extends Component{
 
-
-
 	render(){
 
 		let {
@@ -27,9 +25,6 @@ class Auth extends Component{
 			documentActions,
 			...other,
 		} = this.props;
-
-		console.log('Auth props', this.props);
-		console.log('Auth props', {...other});
 
 		return <Prototype
 			loginCanceled={userActions.loginCanceled}
@@ -55,9 +50,6 @@ function mapStateToProps(state) {
 
 
 function mapDispatchToProps(dispatch) {
-  // console.log('mapDispatchToProps');
-  // console.log(dispatch);
-
   return {
     // proxyActions: bindActionCreators(proxyActions, dispatch),
     userActions: bindActionCreators(userActions, dispatch),

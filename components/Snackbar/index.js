@@ -40,16 +40,12 @@ export default class Snackbar extends Component {
       }
     };
 
-    console.log('componentWillReceiveProps', newState);
-
     this.setState(newState);
 
     return true;
   }
 
   componentDidMount() {
-
-    console.log('componentDidMount 1');
 
     if (this.state.open) {
       this.setAutoHideTimer();
@@ -58,8 +54,6 @@ export default class Snackbar extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-
-    console.log('componentDidUpdate', prevState, this.state);
 
     if (prevState.open !== this.state.open) {
       if (this.state.open) {
@@ -74,8 +68,6 @@ export default class Snackbar extends Component {
   // Timer that controls delay before snackbar auto hides
   setAutoHideTimer() {
 
-    console.log('setAutoHideTimer');
-
     const autoHideDuration = this.props.autoHideDuration;
 
     if (autoHideDuration > 0) {
@@ -89,7 +81,6 @@ export default class Snackbar extends Component {
       }, autoHideDuration);
     }
 
-    console.log('timerAutoHideId', this.timerAutoHideId);
   }
 
   // Timer that controls delay before click-away events are captured (based on when animation completes)

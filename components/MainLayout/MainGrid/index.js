@@ -47,9 +47,10 @@ class MainGrid extends Component {
     var dockerOpened = this.state.dockerOpened === true;
 
     return <LayoutContainer gutter={0} id="main-layout">
-      <LayoutItem xs={12}>
-
-          {this.props.children} 
+      <LayoutItem 
+        xs={12}
+      >
+        {this.props.children} 
 
       </LayoutItem>
 
@@ -76,8 +77,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-
-  console.log('state', state);
 
   var currentState = {};
 

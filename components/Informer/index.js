@@ -7,7 +7,6 @@ export default class Informer extends Snackbar {
 
   componentDidMount() {
 
-    console.log('componentDidMount 2');
     // console.log('f1', Informer.prototype.componentDidMount);
     // console.log('f2', Snackbar.prototype.componentDidMount);
 
@@ -34,7 +33,6 @@ export default class Informer extends Snackbar {
 
     this.setState(newState);
 
-    console.log('componentWillReceiveProps', nextProps, newState);
 
     return true;
   }
