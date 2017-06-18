@@ -20,6 +20,7 @@ import * as documentActions from 'modules/Redux/actions/documentActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
  
+import {Informer, Auth} from 'modules/Templates';
 
 const defaultProps = {
   dockerOpened: false,
@@ -53,6 +54,11 @@ class MainGrid extends Component {
         {this.props.children} 
 
       </LayoutItem>
+
+      <Informer
+        message={this.props.informerMessage}
+        documentActions={this.props.documentActions}
+      />  
 
     </LayoutContainer>;
   }
