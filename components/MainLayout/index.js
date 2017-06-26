@@ -17,8 +17,6 @@ import {blueGrey, grey, amber} from 'material-ui/styles/colors';
 
 import MainGrid from './MainGrid';
 
-import {Informer, Auth} from 'modules/Templates';
-
 let classes;
 
 
@@ -144,18 +142,6 @@ class MainLayout extends Component {
     >
       {this.props.children}
 
-
-      {auth_form
-        ? <Auth 
-        />
-        :
-        null
-      }
-
-      <Informer
-        message={this.props.informerMessage}
-        documentActions={this.props.documentActions}
-      />  
     </MainGrid>;
   }
 }
@@ -167,6 +153,7 @@ MainLayout.propTypes = {
 MainLayout.defaultProps = {
   exports: {},
   auth_form: true,
+  informerMessage: "",
 };
 
 MainLayout.contextTypes = {

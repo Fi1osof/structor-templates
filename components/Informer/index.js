@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import PropTypes from 'prop-types';
+
 import Snackbar from '../Snackbar';
 
 export default class Informer extends Snackbar {
@@ -7,6 +9,7 @@ export default class Informer extends Snackbar {
 
   componentDidMount() {
 
+    // console.log('componentDidMount 2');
     // console.log('f1', Informer.prototype.componentDidMount);
     // console.log('f2', Snackbar.prototype.componentDidMount);
 
@@ -33,6 +36,7 @@ export default class Informer extends Snackbar {
 
     this.setState(newState);
 
+    // console.log('componentWillReceiveProps', nextProps, newState);
 
     return true;
   }
@@ -59,13 +63,17 @@ export default class Informer extends Snackbar {
           message: "",
         });
 
-        this.props.documentActions.InformerMessageShowed();
+        this.props.InformerMessageShowed();
 
       } else {;
 
       }
     }
   }
+}
+
+Informer.propTypes = {
+  InformerMessageShowed: PropTypes.func.isRequired,
 }
 
 

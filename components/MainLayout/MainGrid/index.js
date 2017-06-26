@@ -20,7 +20,6 @@ import * as documentActions from 'modules/Redux/actions/documentActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
  
-import {Informer, Auth} from 'modules/Templates';
 
 const defaultProps = {
   dockerOpened: false,
@@ -48,17 +47,11 @@ class MainGrid extends Component {
     var dockerOpened = this.state.dockerOpened === true;
 
     return <LayoutContainer gutter={0} id="main-layout">
-      <LayoutItem 
-        xs={12}
-      >
-        {this.props.children} 
+      <LayoutItem xs={12}>
+
+          {this.props.children} 
 
       </LayoutItem>
-
-      <Informer
-        message={this.props.informerMessage}
-        documentActions={this.props.documentActions}
-      />  
 
     </LayoutContainer>;
   }
@@ -83,6 +76,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
+
+  // console.log('state', state);
 
   var currentState = {};
 

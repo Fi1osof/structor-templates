@@ -1,6 +1,3 @@
-import 'moment/src/locale/ru';
-import moment from 'moment';
-
 
 import App from './components/App';
 import MainLayout from './components/MainLayout';
