@@ -42,19 +42,24 @@ export default class Informer extends Snackbar {
   }
 
   // componentDidUpdate(prevProps, prevState){
-  //
-  //   console.log('componentDidUpdate', prevProps, prevState);
-  //
-  //   this.props.documentActions.InformerMessageShowed();
-  //
-  //   Snackbar.prototype.componentDidUpdate.call(this, prevProps, prevState);
+  
+  //   // console.log('componentDidUpdate', prevProps, prevState);
+  
+  //   // this.props.documentActions.InformerMessageShowed();
+  
+  //   // Snackbar.prototype.componentDidUpdate.call(this, prevProps, prevState);
+
   // }
 
   componentDidUpdate(prevProps, prevState) {
 
-    // console.log('componentDidUpdate', prevState, this.state);
-    
     Snackbar.prototype.componentDidUpdate.call(this, prevProps, prevState);
+
+    if(this.props.autoHideDuration && this.props.message && this.props.message != "" && prevProps.message != this.props.message){
+      setTimeout(() => {
+        this.props.InformerMessageShowed()
+      }, this.props.autoHideDuration);
+    }
 
     if (prevState.open !== this.state.open) {
       if (this.state.open !== true) {
@@ -63,7 +68,8 @@ export default class Informer extends Snackbar {
           message: "",
         });
 
-        this.props.InformerMessageShowed();
+        // alert('InformerMessageShowed');
+        // this.props.InformerMessageShowed();
 
       } else {;
 
@@ -74,6 +80,10 @@ export default class Informer extends Snackbar {
 
 Informer.propTypes = {
   InformerMessageShowed: PropTypes.func.isRequired,
+}
+
+Informer.defaultProps = {
+  autoHideDuration: 3000,
 }
 
 

@@ -153,7 +153,6 @@ MainLayout.propTypes = {
 MainLayout.defaultProps = {
   exports: {},
   auth_form: true,
-  informerMessage: "",
 };
 
 MainLayout.contextTypes = {
