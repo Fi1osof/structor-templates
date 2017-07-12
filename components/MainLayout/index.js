@@ -15,7 +15,7 @@ import { createStyleSheet } from 'material-ui/styles';
 import customPropTypes from 'material-ui/utils/customPropTypes';
 import {blueGrey, grey, amber} from 'material-ui/styles/colors';
 
-import MainGrid from './MainGrid';
+// import MainGrid from './MainGrid';
 
 let classes;
 
@@ -36,7 +36,6 @@ const styleSheet = createStyleSheet('DatabaseTable', (theme) => {
   DrawerPaper[theme.breakpoints.down('md')] = {
       
     width: '100%',
-    color: 'red', 
   }
 
 
@@ -46,9 +45,11 @@ const styleSheet = createStyleSheet('DatabaseTable', (theme) => {
 
 
   return {
+    MainLayout: {
+      height: '100%',
+    },
     root: {
-      marginTop: 60,
-
+      // marginTop: 60,
       '& .success': {
 
         color: 'green',
@@ -135,14 +136,27 @@ class MainLayout extends Component {
 
     const {} = this.state; // eslint-disable-line
 
-    let {auth_form, ...other} = this.props;
+    let {
+      auth_form, 
+      location, 
+      params, 
+      route, 
+      router, 
+      routes, 
+      routeParams, 
+      className, 
+      exports, 
+      ...other
+    } = this.props;
 
-    return <MainGrid
-      classes={classes}
+    return <div
+      id="Templates-MainLayout"
+      {...other}
+      className={[classes.MainLayout, "MainLayout", className].join(" ")}
     >
       {this.props.children}
 
-    </MainGrid>;
+    </div>;
   }
 }
 
