@@ -1,72 +1,72 @@
-/**
-*
-* MainLayout
-*
-*/
+// /**
+// *
+// * MainLayout
+// *
+// */
 
-import React, { Component } from "react";
-import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router'
+// import React, { Component } from "react";
+// import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router'
 
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
+// import injectTapEventPlugin from 'react-tap-event-plugin';
+// injectTapEventPlugin();
 
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import createMuiTheme from 'material-ui/styles/theme';
-import createPalette from 'material-ui/styles/palette';
-import { createStyleSheet } from 'material-ui/styles';
-import {blueGrey, grey, amber} from 'material-ui/styles/colors';
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// import createMuiTheme from 'material-ui/styles/theme';
+// import createPalette from 'material-ui/styles/palette';
+// import { createStyleSheet } from 'material-ui/styles';
+// import {blueGrey, grey, amber} from 'material-ui/styles/colors';
 
-import {MainLayout} from 'modules/Templates';
+// import {MainLayout} from 'modules/Templates';
  
-var customStyles;
+// var customStyles;
 
-class App extends Component {
+// class App extends Component {
   
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//     };
 
-    // console.log('MainLayout constructor');
+//     // console.log('MainLayout constructor');
 
-    customStyles = createMuiTheme({
-      userAgent: typeof window != "undefined" && window.navigator && window.navigator.userAgent ? window.navigator.userAgent : props.userAgent || 'all',
-      palette: createPalette({
-        primary: blueGrey,
-      }),
-      colors: {
-        warning: '#FFC107',
-        danger: '#F44336',
-        info: '#2196F3',
-      },
-    });
-  }
+//     customStyles = createMuiTheme({
+//       userAgent: typeof window != "undefined" && window.navigator && window.navigator.userAgent ? window.navigator.userAgent : props.userAgent || 'all',
+//       palette: createPalette({
+//         primary: blueGrey,
+//       }),
+//       colors: {
+//         warning: '#FFC107',
+//         danger: '#F44336',
+//         info: '#2196F3',
+//       },
+//     });
+//   }
 
 
 
-  render() {
+//   render() {
 
-    const {} = this.state; // eslint-disable-line
+//     const {} = this.state; // eslint-disable-line
 
-    return (
-      <MuiThemeProvider theme={customStyles}>
+//     return (
+//       <MuiThemeProvider theme={customStyles}>
 
-        <MainLayout
-          {...this.props}
-        >
-          {this.props.children}
-        </MainLayout>
-      </MuiThemeProvider>
-    );
-  }
-}
+//         <MainLayout
+//           {...this.props}
+//         >
+//           {this.props.children}
+//         </MainLayout>
+//       </MuiThemeProvider>
+//     );
+//   }
+// }
 
-App.propTypes = {
-};
+// App.propTypes = {
+// };
 
-App.defaultProps = {
-};
+// App.defaultProps = {
+// };
 
-export default App;
+// export default App;

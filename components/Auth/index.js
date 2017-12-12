@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 
 import Prototype from 'material-ui-components/src/Auth';
 
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+// import {connect} from 'react-redux';
+// import {bindActionCreators} from 'redux';
 
-import * as userActions from 'modules/Redux/actions/userActions';
-import * as documentActions from 'modules/Redux/actions/documentActions';
+// import * as userActions from 'modules/Redux/actions/userActions';
+// import * as documentActions from 'modules/Redux/actions/documentActions';
 
 const defaultProps = {
 	open: false,
@@ -16,17 +16,23 @@ const defaultProps = {
   allowPasswordRecovery: true
 }
 
-class Auth extends Component{
+export default class Auth extends Component{
 
-
+	static contextTypes = {
+		userActions: PropTypes.object.isRequired,
+		documentActions: PropTypes.object.isRequired,
+	};
 
 	render(){
 
 		let {
-			userActions,
-			documentActions,
 			...other,
 		} = this.props;
+
+		const {
+			userActions,
+			documentActions,
+		} = this.context;
 
 		// console.log('Auth props', this.props);
 		// console.log('Auth props', {...other});
@@ -44,28 +50,26 @@ class Auth extends Component{
 Auth.defaultProps = defaultProps;
 
 Auth.propTypes = {
-  userActions: PropTypes.object.isRequired,
-  documentActions: PropTypes.object.isRequired,
 }; 
 
-function mapStateToProps(state) {
+// function mapStateToProps(state) {
 
-  return state;
-}
-
-
-function mapDispatchToProps(dispatch) {
-  // console.log('mapDispatchToProps');
-  // console.log(dispatch);
-
-  return {
-    // proxyActions: bindActionCreators(proxyActions, dispatch),
-    userActions: bindActionCreators(userActions, dispatch),
-    documentActions: bindActionCreators(documentActions, dispatch),
-    // documentActions: bindActionCreators(documentActions, dispatch),
-  }
-}
+//   return state;
+// }
 
 
+// function mapDispatchToProps(dispatch) {
+//   // console.log('mapDispatchToProps');
+//   // console.log(dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Auth);
+//   return {
+//     // proxyActions: bindActionCreators(proxyActions, dispatch),
+//     userActions: bindActionCreators(userActions, dispatch),
+//     documentActions: bindActionCreators(documentActions, dispatch),
+//     // documentActions: bindActionCreators(documentActions, dispatch),
+//   }
+// }
+
+
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Auth);
